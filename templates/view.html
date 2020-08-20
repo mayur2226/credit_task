@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+{% block title %} View users {% endblock %}
+{% block body %}
+
+    <div class="container my-3">
+      <h3>Current Users</h3>
+    <table class="table table-bordered" style="color: white;">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Available Credit</th>
+            <th scope="col">Phone No.</th>
+            <th scope="col">Transaction</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for user in user %}
+          <tr>
+            
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.current_credit}}</td>
+            <td>{{user.phone_no}}</td>
+            <td><button class="btn btn-primary"><a href="/credit/transaction/" style="color: white;">Begin</a></button></td>
+          </tr>
+        {% endfor %}
+         
+        </tbody>
+      </table>
+      </div>
+
+    {% endblock %}

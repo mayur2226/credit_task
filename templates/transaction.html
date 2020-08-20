@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+{% block title %} Transaction form {% endblock %}
+
+{% block body %}
+
+<form action="/credit/transaction/" method="POST"> {% csrf_token %}
+    <div class="container">
+      <h3>Transaction Form</h3>
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input name="sender" type="text" class="form-control" placeholder="Your name">
+          </div>    
+    <div class="form-group">
+      <label for="name">Name of User to whom you have to transfer</label>
+      <input type="text" name="reciever" class="form-control" placeholder="name">
+    </div>
+    <div class="form-group">
+      <label for="amount">Select your amount to be transfered</label>
+      <input type="number" name="amount" class="form-control" placeholder="Amount">
+    </div>
+    <button type="submit" class="btn btn-primary">Transfer</button>
+    
+  </form>
+</div>
+{% endblock %}
