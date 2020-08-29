@@ -1,6 +1,6 @@
 {% extends 'basic.html' %}
 {% block title %}Transfer Records{% endblock %}
-
+{% block h6 %}<a class="navbar-brand" href="/view" style:"color:white;">View Users</a>{% endblock %}
 {% block body %}
 <div class="container my-3">
     <h3>Transfer Records</h3>
@@ -10,20 +10,21 @@
             <th scope="col">Sender</th>
             <th scope="col">Reciever</th>
             <th scope="col">Transaction Amount</th>
-            
+
           </tr>
         </thead>
         <tbody>
         {% for tran in tran %}
           <tr>
-            
+
             <td>{{tran.sender}}</td>
             <td>{{tran.reciever}}</td>
             <td>{{tran.amount}}</td>
-            
+
+
           </tr>
         {% endfor %}
-         
+
         </tbody>
       </table>
       </div>
