@@ -36,6 +36,8 @@ def trans(request):
         Fam=0
     if (int(Fam)<0):
         return HttpResponse("Enter valid amount")
+    elif(int(Fam)>1000):
+        return HttpResponse("Enter amount less than thousand")
     else:
         if (Fsend and Frec in l1):
             if request.method == 'POST':
